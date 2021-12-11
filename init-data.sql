@@ -1,8 +1,10 @@
-INSERT Players (Name)
-VALUES ('Dealer'),
-		('Human'),
-		('Computer');
+INSERT Players (Name, IsHuman)
+VALUES ('Dealer', 0),
+		('Human', 1),
+		('Computer', 0);
 GO
+
+
 
 INSERT Cards (Name, Value, Position, PhotoPath, PlayerId)
 VALUES ('2 of Clubs', 2, 1, 'assets/img/2_of_clubs.png', (SELECT Id from Players where name = 'Dealer')),
@@ -56,4 +58,4 @@ VALUES ('2 of Clubs', 2, 1, 'assets/img/2_of_clubs.png', (SELECT Id from Players
 	   ('Jack of Spades', 11, 49, 'assets/img/jack_of_spades2.png', (SELECT Id from Players where name = 'Dealer')),
 	   ('Queen of Spades', 12, 50, 'assets/img/queen_of_spades2.png', (SELECT Id from Players where name = 'Dealer')),
 	   ('King of Spades', 13, 51, 'assets/img/king_of_spades2.png', (SELECT Id from Players where name = 'Dealer')),
-	   ('Ace of Spades', 14, 52, 'assets/img/ace_of_spades2.png', (SELECT Id from Players where name = 'Dealer')),
+	   ('Ace of Spades', 14, 52, 'assets/img/ace_of_spades2.png', (SELECT Id from Players where name = 'Dealer'));
